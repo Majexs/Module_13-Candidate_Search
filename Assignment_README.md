@@ -1,5 +1,13 @@
 # Module 13 Challenge: Candidate Search
 
+## Assignment Checklist
+
+>* Understand how files fit together
+>* Work through CadidateSearch & SavedCandidates pages
+>* npm install
+>* Write ReadMe
+>* Deploy to Render
+
 ## Your Task
 
 TypeScript can enhance the overall development experience with React, leading to more reliable, maintainable, and scalable applications.
