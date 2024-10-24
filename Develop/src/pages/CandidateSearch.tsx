@@ -31,7 +31,7 @@ const CandidateSearch = () => {
   return (
     <>
       <h1>CandidateSearch</h1>
-      <section id='searchSection'>
+      <section className='table'>
         <div
           onLoad={() =>
             searchForCandidate

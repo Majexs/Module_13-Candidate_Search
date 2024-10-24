@@ -2,9 +2,11 @@
 
 ## Assignment Checklist
 
->* Understand how files fit together
->* Work through CadidateSearch & SavedCandidates pages
->* npm install
+>* Understand why API token keeps expiring when I commit
+>* CandidateCard edit
+>* PotentialCandidate edit
+>* CandidateSearch edit
+>* SavedCandidate edit
 >* Write ReadMe
 >* Deploy to Render
 
