@@ -1,6 +1,6 @@
 import type React from 'react';
 import {useEffect, useState} from 'react';
-import potentialCandidatesList from '../components/potentialCandidates';
+import potentialCandidates from '../components/potentialCandidates';
 import type Candidate from '../interfaces/Candidate.interface';
 
 const SavedCandidates = () => {
@@ -9,7 +9,7 @@ const SavedCandidates = () => {
   const removeFromStorage = (
     e: React.MouseEvent<SVGSVGElement, MouseEvent>,
     currentlyOnSavedCandidates: boolean | null | undefined,
-    name: string | null
+    username: string | null
   ) => {
     e.preventDefault();
     if (currentlyOnSavedCandidates) {
@@ -20,7 +20,7 @@ const SavedCandidates = () => {
         parsedPotentialCandidates = JSON.parse(storedPotentialCandidates);
       }
       parsedPotentialCandidates = parsedPotentialCandidates.filter(
-        (candidate) => candidate.name !== name
+        (candidate) => candidate.username !== username
       );
       setPotentialCandidates(parsedPotentialCandidates);
       localStorage.setItem('potentialCandidates', JSON.stringify(parsedPotentialCandidates));
@@ -28,9 +28,7 @@ const SavedCandidates = () => {
   };
 
   useEffect(() => {
-    const parsedPotentialCandidates = JSON.parse(
-      localStorage.getItem('potetialCandidates') as string
-    );
+    const parsedPotentialCandidates = JSON.parse(localStorage.getItem('potetialCandidates') as string);
     setPotentialCandidates(parsedPotentialCandidates);
   }, []);
 

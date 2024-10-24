@@ -8,7 +8,7 @@ interface PotentialCandidatesProps {
     | ((
         e: React.MouseEvent<SVGSVGElement, MouseEvent>,
         currentlyOnList: boolean | null | undefined,
-        name: string | null
+        username: string | null
       ) => void)
     | null;
 }
@@ -25,7 +25,7 @@ const potentialCandidatesList = ({
                 {potentialCandidates.map((candidate) => (
                     <CandidateCard
                         currentCandidate={candidate}
-                        key={candidate.name}
+                        key={candidate.username}
                         onSavedCandidates={true}
                         removeFromStorage={removeFromStorage}
                     />

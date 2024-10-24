@@ -11,7 +11,7 @@ type CandidateCardProps = {
     | ((
         e: React.MouseEvent<SVGSVGElement, MouseEvent>,
         currentlyOnSavedCandidates: boolean | null | undefined,
-        name: string | null
+        username: string | null
       ) => void)
     | null;
 };
@@ -24,13 +24,13 @@ const CandidateCard = ({
 }: CandidateCardProps) => {
     return (
         <>
-            {currentCandidate?.name ? (
-                <section className='candidateCard'>
+            {currentCandidate?.username ? (
+                <section className='table'>
                     <figure>
-                        <img src={`${currentCandidate.avatar}`} alt={`${currentCandidate.name}`} />
+                        <img src={`${currentCandidate.avatar}`} alt={`${currentCandidate.username}`} />
                     </figure>
                     <article className='details'>
-                        <h2>{`${currentCandidate.name} (${currentCandidate.username})`}</h2>
+                        <h2>{currentCandidate.username}</h2>
                         <p>
                             Location: {currentCandidate.location}
                         </p>
@@ -50,7 +50,7 @@ const CandidateCard = ({
                                 removeFromStorage?.(
                                     e,
                                     onSavedCandidates,
-                                    currentCandidate.name
+                                    currentCandidate.username
                                 )
                             }
                         />
