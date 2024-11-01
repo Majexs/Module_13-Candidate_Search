@@ -22,14 +22,16 @@ const potentialCandidatesList = ({
     return (
         <>
             <ul>
-                {potentialCandidates.map((candidate) => (
-                    <CandidateCard
-                        currentCandidate={candidate}
-                        key={candidate.username}
-                        onSavedCandidates={true}
-                        removeFromStorage={removeFromStorage}
-                    />
-                ))}
+                <li>
+                    {potentialCandidates.map((candidate) => (
+                        <CandidateCard
+                            currentCandidate={candidate}
+                            key={candidate.username}
+                            onSavedCandidates={true}
+                            removeFromStorage={removeFromStorage}
+                        />
+                    ))}
+                </li>
             </ul>
         </>
     );

@@ -30,11 +30,12 @@ const CandidateSearch = () => {
 
   return (
     <>
-      <h1>CandidateSearch</h1>
-      <section className='table'>
+      <h1 className='pageHeader'>CandidateSearch</h1>
+      <section>
         <div
+        // DON'T THINK THIS IS CORRECT
           onLoad={() =>
-            searchForCandidate
+            searchForCandidate()
           }
         >
         </div>

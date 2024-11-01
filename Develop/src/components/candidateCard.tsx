@@ -29,21 +29,23 @@ const CandidateCard = ({
                     <figure>
                         <img src={`${currentCandidate.avatar}`} alt={`${currentCandidate.username}`} />
                     </figure>
-                    <article className='details'>
-                        <h2>{currentCandidate.username}</h2>
-                        <p>
-                            Location: {currentCandidate.location}
-                        </p>
-                        <p>
-                            Email: {currentCandidate.email}
-                        </p>
-                        <p>
-                            Company: {currentCandidate.company}
-                        </p>
-                        <p>
-                            Bio: {currentCandidate.html_url}
-                        </p>
-                    </article>
+                    <table>
+                        <tbody>
+                            <h2>{currentCandidate.username}</h2>
+                            <tr>
+                                Location: {currentCandidate.location}
+                            </tr>
+                            <tr>
+                                Email: {currentCandidate.email}
+                            </tr>
+                            <tr>
+                                Company: {currentCandidate.company}
+                            </tr>
+                            <tr>
+                                Bio: {currentCandidate.html_url}
+                            </tr>
+                        </tbody>
+                    </table>
                     {onSavedCandidates? (
                         <FcCancel
                             onClick={(e: React.MouseEvent<SVGSVGElement, MouseEvent>) =>

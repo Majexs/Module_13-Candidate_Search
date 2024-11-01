@@ -1,6 +1,6 @@
 import type React from 'react';
 import {useEffect, useState} from 'react';
-import potentialCandidates from '../components/potentialCandidates';
+import potentialCandidatesList from '../components/potentialCandidates';
 import type Candidate from '../interfaces/Candidate.interface';
 
 const SavedCandidates = () => {
@@ -35,7 +35,7 @@ const SavedCandidates = () => {
   return (
     <>
       <h1 className='pageHeader'>Potential Candidates</h1>
-      {(!potentialCandidates?.length || potentialCandidates?.length === 0) ? (
+      {(!potentialCandidatesList?.length || potentialCandidatesList?.length === 0) ? (
         <h1>No potential candidates at this time.</h1>
       ) : (
         <potentialCandidatesList
