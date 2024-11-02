@@ -1,5 +1,5 @@
 // TODO: Create an interface for the Candidate objects returned by the API
-export default interface Candidate {
+export interface Candidate {
     readonly avatar: string | null;
     readonly username: string | null;
     readonly location: string | null;

@@ -1,5 +1,5 @@
 import type React from 'react';
-import type Candidate from '../interfaces/Candidate.interface';
+import type { Candidate } from '../interfaces/Candidate.interface';
 import CandidateCard from './candidateCard';
 
 interface PotentialCandidatesProps {
@@ -13,7 +13,7 @@ interface PotentialCandidatesProps {
     | null;
 }
 
-const potentialCandidatesList = ({
+const PotentialCandidatesList = ({
     potentialCandidates,
     removeFromStorage,
 }: PotentialCandidatesProps) => {
@@ -23,7 +23,7 @@ const potentialCandidatesList = ({
         <>
             <ul>
                 <li>
-                    {potentialCandidates.map((candidate) => (
+                    {potentialCandidates?.map((candidate) => (
                         <CandidateCard
                             currentCandidate={candidate}
                             key={candidate.username}
@@ -37,4 +37,4 @@ const potentialCandidatesList = ({
     );
 };
 
-export default potentialCandidatesList;
+export default PotentialCandidatesList;
