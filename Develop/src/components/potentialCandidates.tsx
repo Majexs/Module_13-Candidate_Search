@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { Candidate } from '../interfaces/Candidate.interface';
+import type Candidate from '../interfaces/Candidate.interface';
 import CandidateCard from './candidateCard';
 
 interface PotentialCandidatesProps {
@@ -8,7 +8,7 @@ interface PotentialCandidatesProps {
     | ((
         e: React.MouseEvent<SVGSVGElement, MouseEvent>,
         currentlyOnSavedCandidates: boolean | null | undefined,
-        username: string | null
+        login: string | null
       ) => void)
     | null;
 }
@@ -26,7 +26,7 @@ const PotentialCandidatesList = ({
                     {potentialCandidates?.map((candidate) => (
                         <CandidateCard
                             currentCandidate={candidate}
-                            key={candidate.username}
+                            key={candidate.login}
                             onSavedCandidates={true}
                             removeFromStorage={removeFromStorage}
                         />

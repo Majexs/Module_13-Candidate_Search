@@ -1,17 +1,16 @@
 import type React from 'react';
-import type { Candidate } from '../interfaces/Candidate.interface';
+import type Candidate from '../interfaces/Candidate.interface';
 import { FcPlus } from "react-icons/fc";
-import { FcCancel } from "react-icons/fc";
+import { FcMinus } from "react-icons/fc";
 
 type CandidateCardProps = {
     currentCandidate: Candidate;
-    addToSavedCandidates?: (() => void) | null;
     onSavedCandidates?: boolean | null;
     removeFromStorage?:
     | ((
         e: React.MouseEvent<SVGSVGElement, MouseEvent>,
         currentlyOnSavedCandidates: boolean | null | undefined,
-        username: string | null
+        login: string | null
       ) => void)
     | null;
     rejectCandidate?: (() => void) | null;
@@ -29,43 +28,51 @@ const CandidateCard = ({
         <>
             <section className='table'>
                 <figure>
-                    <img src={`${currentCandidate.avatar}`} alt={`${currentCandidate.username}`} />
+                    <img src={`${currentCandidate.avatar_url}`} alt={`${currentCandidate.login}`} />
                 </figure>
+                <h2>{currentCandidate.login}</h2>
                 <table>
                     <tbody>
-                        <h2>{currentCandidate.username}</h2>
                         <tr>
-                            Location: {currentCandidate.location}
+                            <td>Location: {currentCandidate.location}</td>
                         </tr>
                         <tr>
-                            Email: {currentCandidate.email}
+                            <td>Email: {currentCandidate.email}</td>
                         </tr>
                         <tr>
-                            Company: {currentCandidate.company}
+                            <td>Company: {currentCandidate.company}</td>
                         </tr>
                         <tr>
-                            Bio: {currentCandidate.html_url}
+                            <td>
+                                url: {currentCandidate.html_url}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
                 {onSavedCandidates? (
-                    <FcCancel
-                        onClick={(e: React.MouseEvent<SVGSVGElement, MouseEvent>) =>
-                            removeFromStorage?.(
-                                e,
-                                onSavedCandidates,
-                                currentCandidate.username
-                            )
-                        }
-                    />
+                    <button>
+                        <FcMinus
+                                onClick={(e: React.MouseEvent<SVGSVGElement, MouseEvent>) =>
+                                    removeFromStorage?.(
+                                        e,
+                                        onSavedCandidates,
+                                        currentCandidate.login
+                                    )
+                                }
+                        />
+                    </button>
                 ):(
                     <>
-                        <FcPlus
-                            onClick={() => acceptCandidate?.()}
-                        />
-                        <FcCancel
-                            onClick={() => rejectCandidate?.()}
-                        />
+                        <button>
+                            <FcPlus
+                                onClick={() => acceptCandidate?.()}
+                            />
+                        </button>
+                        <button>
+                            <FcMinus
+                                onClick={() => rejectCandidate?.()}
+                            />
+                        </button>
                     </>
                 )}
             </section>

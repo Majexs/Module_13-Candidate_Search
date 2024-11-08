@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { searchGithub } from '../api/API';
+import { searchGithub, searchGithubUser } from '../api/API';
 import CandidateCard from '../components/candidateCard';
-import type { Candidate } from '../interfaces/Candidate.interface';
+import type Candidate from '../interfaces/Candidate.interface';
 
 const CandidateSearch = () => {
   const [currentCandidate, setCurrentCandidate] = useState<Candidate>({
-    avatar: '',
-    username: '',
+    avatar_url: '',
+    login: '',
     location: '',
     email: '',
     company: '',
@@ -27,9 +27,10 @@ const CandidateSearch = () => {
 
   const searchForCandidate = async () => {
     const data: Candidate[] = await searchGithub();
+    const userData = await searchGithubUser(data[0].login || '');
     if (data) {
       setCandidateResults(data);
-      console.log(candidatesResults);
+      setCurrentCandidate(userData);
     }
   };
 
@@ -38,15 +39,16 @@ const CandidateSearch = () => {
   }, []);
 
   const [count, setCount] = useState<number>(0);
-  const newCount: number = setCount(count + 1);
 
   const rejectCandidate = () => {
-    setCurrentCandidate(candidatesResults[newCount]);
+    setCount(count + 1);
+    setCurrentCandidate(candidatesResults[count]);
   }
 
   const acceptCandidate = () => {
+    setCount(count + 1);
     addToPotentialCandidates();
-    setCurrentCandidate(candidatesResults[newCount]);
+    setCurrentCandidate(candidatesResults[count]);
   }
 
   return (
@@ -54,9 +56,8 @@ const CandidateSearch = () => {
       <h1 className='pageHeader'>CandidateSearch</h1>
       <CandidateCard
         currentCandidate={currentCandidate}
-        addToSavedCandidates={addToPotentialCandidates}
-        rejectCandidate={rejectCandidate}
         acceptCandidate={acceptCandidate}
+        rejectCandidate={rejectCandidate}
       />
     </>
   );
