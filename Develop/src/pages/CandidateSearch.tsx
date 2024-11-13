@@ -23,6 +23,7 @@ const CandidateSearch = () => {
     }
     parsedPotentialCandidates.push(currentCandidate);
     localStorage.setItem('potentialCandidates', JSON.stringify(parsedPotentialCandidates));
+    console.log(parsedPotentialCandidates);
   };
 
   const searchForCandidate = async () => {

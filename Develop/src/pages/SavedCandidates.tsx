@@ -27,19 +27,19 @@ const SavedCandidates = () => {
   };
 
   useEffect(() => {
-    const parsedPotentialCandidates = JSON.parse(localStorage.getItem('potetialCandidates') as string);
-    if (!parsedPotentialCandidates) {
-      console.log('No candidates')
+    const potentialCandidates = JSON.parse(localStorage.getItem('potetialCandidates') as string);
+    if (!potentialCandidates) {
+      console.log('No candidates');
       return;
     }
-    setPotentialCandidates(parsedPotentialCandidates);
+    setPotentialCandidates(potentialCandidates);
   }, []);
 
   return (
     <>
       <h1 className='pageHeader'>Potential Candidates</h1>
       {(!PotentialCandidatesList?.length || PotentialCandidatesList?.length === 0) ? (
-        <h1>No potential candidates at this time.</h1>
+        <h2>No potential candidates at this time.</h2>
       ) : (
         <PotentialCandidatesList
           potentialCandidates={potentialCandidates}
