@@ -44,7 +44,10 @@ const CandidateCard = ({
                         </tr>
                         <tr>
                             <td>
-                                url: {currentCandidate.html_url}
+                                url: 
+                                <a href={`${currentCandidate.html_url}`}>
+                                    {currentCandidate.html_url}
+                                </a>
                             </td>
                         </tr>
                     </tbody>

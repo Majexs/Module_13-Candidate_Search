@@ -27,7 +27,10 @@ const SavedCandidates = () => {
   };
 
   useEffect(() => {
-    const potentialCandidates = JSON.parse(localStorage.getItem('potetialCandidates') as string);
+    const potentialCandidates = JSON.parse(localStorage.getItem
+      ('potentialCandidates') as string);
+      console.log(localStorage.getItem('potentialCandidates'));
+    console.log(potentialCandidates);
     if (!potentialCandidates) {
       console.log('No candidates');
       return;

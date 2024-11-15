@@ -47,8 +47,8 @@ const CandidateSearch = () => {
   }
 
   const acceptCandidate = () => {
-    setCount(count + 1);
     addToPotentialCandidates();
+    setCount(count + 1);
     setCurrentCandidate(candidatesResults[count]);
   }
 

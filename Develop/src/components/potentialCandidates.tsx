@@ -19,14 +19,16 @@ const PotentialCandidatesList = ({
 }: PotentialCandidatesProps) => {
     return (
         <>
-            {potentialCandidates?.map((candidate) => (
-                    <CandidateCard
-                        currentCandidate={candidate}
-                        key={candidate.login}
-                        onSavedCandidates={true}
-                        removeFromStorage={removeFromStorage}
-                    />
-            ))}
+            <ol>
+                {potentialCandidates?.map((candidate) => (
+                        <CandidateCard
+                            currentCandidate={candidate}
+                            key={candidate.login}
+                            onSavedCandidates={true}
+                            removeFromStorage={removeFromStorage}
+                        />
+                ))}
+            </ol>
         </>
     );
 };
