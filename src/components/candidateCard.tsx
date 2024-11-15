@@ -25,7 +25,7 @@ const CandidateCard = ({
     acceptCandidate,
 }: CandidateCardProps) => {
     return (
-        <body>
+        <main>
             <figure>
                 <img src={`${currentCandidate.avatar_url}`} alt={`${currentCandidate.login}`} />
             </figure>
@@ -77,7 +77,7 @@ const CandidateCard = ({
                     </button>
                 </>
             )}
-        </body>
+        </main>
     );
 };
 

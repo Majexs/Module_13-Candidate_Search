@@ -20,10 +20,10 @@ const PotentialCandidatesList = ({
     return (
         <>
             <ol>
-                {potentialCandidates?.map((candidate) => (
+                {potentialCandidates?.map((candidate, i) => (
                         <CandidateCard
                             currentCandidate={candidate}
-                            key={candidate.login}
+                            key={i}
                             onSavedCandidates={true}
                             removeFromStorage={removeFromStorage}
                         />
