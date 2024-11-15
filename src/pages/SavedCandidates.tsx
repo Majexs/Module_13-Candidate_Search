@@ -39,17 +39,17 @@ const SavedCandidates = () => {
   }, []);
 
   return (
-    <>
+    <section>
       <h1 className='pageHeader'>Potential Candidates</h1>
-      {(!PotentialCandidatesList?.length || PotentialCandidatesList?.length === 0) ? (
-        <h2>No potential candidates at this time.</h2>
-      ) : (
+      {(!PotentialCandidatesList || PotentialCandidatesList.length === 0) ? (
+        <h2>No potential candidates at this time.</ h2>
+       ) : (
         <PotentialCandidatesList
           potentialCandidates={potentialCandidates}
           removeFromStorage={removeFromStorage}
         />
       )}
-    </>
+    </ section>
   );
 };
 

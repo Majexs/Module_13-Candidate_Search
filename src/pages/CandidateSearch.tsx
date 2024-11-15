@@ -53,14 +53,14 @@ const CandidateSearch = () => {
   }
 
   return (
-    <>
+    <section>
       <h1 className='pageHeader'>CandidateSearch</h1>
       <CandidateCard
         currentCandidate={currentCandidate}
         acceptCandidate={acceptCandidate}
         rejectCandidate={rejectCandidate}
       />
-    </>
+    </ section>
   );
 };
 
