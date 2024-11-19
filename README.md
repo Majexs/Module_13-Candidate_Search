@@ -15,7 +15,7 @@ This is the module 13 challenge for the Columbia Engineering EdX Bootcamp.
 ## Installation
 Once you've downloaded the repo locally, you will need to initiate 'npm install'. Otherwise, you can navigate to the deployed Render page (below):
 
-https://module-13-candidate-search-1-x5t3.onrender.com/SavedCandidates
+https://module-13-candidate-search-1-x5t3.onrender.com/
 
 In addition, here are some extra screenshots of the pages:
 ![Candidate Search Page](./Assets/Screenshot%202024-11-15%20140123.png)
